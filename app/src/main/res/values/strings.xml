@@ -2,11 +2,10 @@
     <string name="app_name">Tic-Tac-Toe</string>
     <string name="_1p"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 1P ]]></string>
     <string name="_1p_vs_2p"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 1P VS 2P]]></string>
-    <string name="_1p_vs_ai"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 1P VS AI ]]></string>
     <string name="Splashtic_tac_toe">Tic-Tac-Toe</string>
     <string name="welcome_n_enjoy"><![CDATA[Welcome  \n  \t \t \t &  \n \t Enjoy!]]></string>
     <string name="play">PLAY</string>
-    <string name="abbrevs">* P  \t - Player  \n* AI - Computer</string>
+    <string name="abbrevs">* P  \t - Player  </string>
     <string name="backINmarker">Back</string>
     <string name="o">O</string>
     <string name="or">or</string>

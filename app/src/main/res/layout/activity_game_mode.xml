@@ -45,18 +45,6 @@
         android:textColor="#A0522D"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/mode3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:gravity="start|center_vertical"
-        android:onClick="goToMarkerScreen"
-        android:text="@string/_1p_vs_ai"
-        android:textColor="#A0522D"
-        android:textStyle="bold" />
-
     <TextView
         android:id="@+id/Text_abbrevs"
         android:layout_width="wrap_content"

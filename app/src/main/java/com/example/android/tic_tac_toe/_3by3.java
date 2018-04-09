@@ -232,11 +232,11 @@ public class _3by3 extends AppCompatActivity implements View.OnClickListener {
             if (boardStatus[i][0] == boardStatus[i][1] && boardStatus[i][0] == boardStatus[i][2]) {
                 if (boardStatus[i][0] == 1) {
                     ScoreStore.xWins++;
-                    result("Winner : Player X!\n" + (i + 1) + " row");
+                    result("Winner : Player X!\n" + "\t \t \t row " + (i + 1));
                     break;
                 } else if (boardStatus[i][0] == 0) {
                     ScoreStore.oWins++;
-                    result("Winner : Player O!\n" + (i + 1) + " row");
+                    result("Winner : Player O!\n" + "\t \t \t row " + (i + 1));
                     break;
                 }
             }
@@ -245,11 +245,11 @@ public class _3by3 extends AppCompatActivity implements View.OnClickListener {
             if (boardStatus[0][i] == boardStatus[1][i] && boardStatus[0][i] == boardStatus[2][i]) {
                 if (boardStatus[0][i] == 1) {
                     ScoreStore.xWins++;
-                    result("Winner : Player X!\n" + (i + 1) + " column");
+                    result("Winner : Player X!\n" + "\t column " + (i + 1));
                     break;
                 } else if (boardStatus[0][i] == 0) {
                     ScoreStore.oWins++;
-                    result("Winner : Player O!\n" + (i + 1) + " column");
+                    result("Winner : Player O!\n" + "\t column " + (i + 1));
                     break;
                 }
             }
@@ -257,19 +257,19 @@ public class _3by3 extends AppCompatActivity implements View.OnClickListener {
         if (boardStatus[0][0] == boardStatus[1][1] && boardStatus[0][0] == boardStatus[2][2]) {
             if (boardStatus[0][0] == 1) {
                 ScoreStore.xWins++;
-                result("Winner : Player X!\nFirst Diagonal");
+                result("Winner : Player X!\n \t \tFirst Diagonal");
             } else if (boardStatus[0][0] == 0) {
                 ScoreStore.oWins++;
-                result("Winner : Player O!\nFirst Diagonal");
+                result("Winner : Player O!\n \t \tFirst Diagonal");
             }
         }
         if (boardStatus[0][2] == boardStatus[1][1] && boardStatus[0][2] == boardStatus[2][0]) {
             if (boardStatus[0][2] == 1) {
                 ScoreStore.xWins++;
-                result("Winner : Player X!\nSecond Diagonal");
+                result("Winner : Player X!\n \t \tSecond Diagonal");
             } else if (boardStatus[0][2] == 0) {
                 ScoreStore.oWins++;
-                result("Winner : Player O!\nSecond Diagonal");
+                result("Winner : Player O!\n \t \tSecond Diagonal");
             }
         }
     }

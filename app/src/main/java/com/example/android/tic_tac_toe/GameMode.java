@@ -18,9 +18,6 @@ public class GameMode extends AppCompatActivity {
         tv.setText(Html.fromHtml(getString(R.string._1p)));
         TextView tv2 = (TextView) findViewById(R.id.mode2);
         tv2.setText(Html.fromHtml(getString(R.string._1p_vs_2p)));
-        TextView tv3 = (TextView) findViewById(R.id.mode3);
-        tv3.setText(Html.fromHtml(getString(R.string._1p_vs_ai)));
-
     }
 
     public void goToMarkerScreen(View view) {
