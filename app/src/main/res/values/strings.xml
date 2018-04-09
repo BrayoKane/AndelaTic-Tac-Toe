@@ -23,6 +23,9 @@
     <string name="quit_">Quit</string>
     <string name="scoreboard">ScoreBoard</string>
     <string name="quit">Quit</string>
-    <string name="x_s_turn">X\'s turn</string>
     <string name="closes_dialogbox_popup">closes dialogBox popup</string>
+    <string name="scoreboard_draw">Draw</string>
+    <string name="scoreboard_o_s_win">O\'s win</string>
+    <string name="scoreboard_x_s_win">X\'s win</string>
+    <string name="scoreboardTitle">Scoreboard</string>
 </resources>
