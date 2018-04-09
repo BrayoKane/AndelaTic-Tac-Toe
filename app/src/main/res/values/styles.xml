@@ -1,0 +1,44 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#A0522D</item>
+        <item name="colorPrimaryDark">#8B4513</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="my_box5">
+        <item name="android:layout_width">@dimen/boxSize5</item>
+        <item name="android:layout_height">@dimen/boxSize5</item>
+        <item name="android:background">#A0522D</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="my_box4">
+        <item name="android:layout_width">@dimen/boxSize4</item>
+        <item name="android:layout_height">@dimen/boxSize4</item>
+        <item name="android:background">#A0522D</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="my_box3">
+        <item name="android:layout_width">@dimen/boxSize3</item>
+        <item name="android:layout_height">@dimen/boxSize3</item>
+        <item name="android:background">#A0522D</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+</resources>

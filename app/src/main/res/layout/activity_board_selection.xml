@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.tic_tac_toe.BoardSelection">
+
+
+    <TextView
+        android:id="@+id/Text_board"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="34dp"
+        android:paddingBottom="65dp"
+        android:text="@string/select_boardText"
+        android:textColor="#8B4513"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/_3by3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Text_board"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="start|center_vertical"
+        android:onClick="goTo3by3"
+        android:text="@string/_3_x_3"
+        android:textColor="#A0522D"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/_4by4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/_3by3"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="start|center_vertical"
+        android:onClick="goTo4by4"
+        android:text="@string/_4_x_4"
+        android:textColor="#A0522D"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/_5by5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/_4by4"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="start|center_vertical"
+        android:onClick="goTo5by5"
+        android:text="@string/_5_x_5"
+        android:textColor="#A0522D"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="goBackToMarkerScreen"
+        android:text="@string/backINboard"
+        android:textColor="#A0522D"
+        android:textStyle="bold" />
+</RelativeLayout>

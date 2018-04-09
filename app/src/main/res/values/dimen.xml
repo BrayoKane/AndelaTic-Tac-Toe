@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="boxSize5">70dp</dimen>
+    <dimen name="boxSize4">80dp</dimen>
+    <dimen name="boxSize3">90dp</dimen>
+</resources>

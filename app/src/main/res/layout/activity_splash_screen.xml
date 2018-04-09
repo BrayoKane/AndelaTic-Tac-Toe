@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.tic_tac_toe.SplashScreen">
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/Splash_vectorDesc"
+        android:src="@drawable/ic_tictactoe_splash" />
+
+    <TextView
+        android:id="@+id/Text_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="cursive"
+        android:text="@string/Splashtic_tac_toe"
+        android:textColor="#8B4513"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

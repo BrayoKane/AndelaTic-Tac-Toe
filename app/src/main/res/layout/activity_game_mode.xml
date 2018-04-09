@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.tic_tac_toe.GameMode">
+
+
+    <TextView
+        android:id="@+id/Text_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
+        android:paddingBottom="35dp"
+        android:text="@string/select_modeText"
+        android:textColor="#8B4513"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/mode1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="start|center_vertical"
+        android:onClick="goToMarkerScreen"
+        android:text="@string/_1p"
+        android:textColor="#A0522D"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/mode2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="start|center_vertical"
+        android:onClick="goToMarkerScreen"
+        android:text="@string/_1p_vs_2p"
+        android:textColor="#A0522D"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/mode3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="start|center_vertical"
+        android:onClick="goToMarkerScreen"
+        android:text="@string/_1p_vs_ai"
+        android:textColor="#A0522D"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Text_abbrevs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="78dp"
+        android:text="@string/abbrevs"
+        android:textColor="#8B4513"
+        android:textStyle="bold" />
+
+</LinearLayout>
