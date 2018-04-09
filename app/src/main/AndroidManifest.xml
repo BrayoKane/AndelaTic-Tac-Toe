@@ -47,6 +47,7 @@
             android:name="._5by5"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
+        <activity android:name="._1p_board_selection"></activity>
     </application>
 
 </manifest>

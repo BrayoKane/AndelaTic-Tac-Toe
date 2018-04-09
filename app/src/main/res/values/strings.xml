@@ -10,7 +10,7 @@
     <string name="o">O</string>
     <string name="or">or</string>
     <string name="x">X</string>
-    <string name="select_markerText">Select the \'marker\' you prefer:</string>
+    <string name="select_markerText">Select the marker you prefer:</string>
     <string name="select_modeText">Select your mode:</string>
     <string name="select_boardText">Select your board size:</string>
     <string name="_3_x_3"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 3 X 3]]></string>
@@ -28,4 +28,7 @@
     <string name="scoreboard_o_s_win">O\'s win</string>
     <string name="scoreboard_x_s_win">X\'s win</string>
     <string name="scoreboardTitle">Scoreboard</string>
+    <string name="_1p_5_x_5"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 5 X 5]]></string>
+    <string name="_1p_4_x_4"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 4 X 4]]></string>
+    <string name="_1p_3_x_3"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 3 X 3]]></string>
 </resources>
