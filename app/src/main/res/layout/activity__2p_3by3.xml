@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="._3by3">
+    tools:context="._2P_3by3">
 
     <TableLayout
         android:id="@+id/_3by3Board"

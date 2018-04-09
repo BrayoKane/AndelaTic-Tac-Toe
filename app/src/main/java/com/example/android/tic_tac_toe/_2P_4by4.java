@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class _4by4 extends AppCompatActivity implements View.OnClickListener {
+public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener {
     boolean PLAYER_X = true;
     int TURN_COUNT = 0;
 
@@ -43,9 +43,9 @@ public class _4by4 extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity__4by4);
+        setContentView(R.layout.activity__2p_4by4);
 
-        int option = getIntent().getIntExtra(MarkerScreen.OPTION, 0);
+        int option = getIntent().getIntExtra(_2P_MarkerSelection.OPTION, 0);
         PLAYER_X = option == 0;
 
         button00 = findViewById(R.id.button00);

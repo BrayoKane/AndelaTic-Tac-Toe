@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.tic_tac_toe._1p_board_selection">
+    tools:context="com.example.android.tic_tac_toe._1P_BoardSelection">
 
 
     <TextView

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.tic_tac_toe.MarkerScreen">
+    tools:context="com.example.android.tic_tac_toe._1P_MarkerSelection">
 
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_below="@+id/Text_marker"
         android:layout_marginLeft="37dp"
         android:layout_marginStart="37dp"
-        android:onClick="goToBoardScreen"
+        android:onClick="goTo1pBoardScreen"
         android:text="@string/x"
         android:textColor="#A0522D"
         android:textSize="28sp"
@@ -57,7 +57,7 @@
         android:layout_below="@+id/Text_marker"
         android:layout_marginEnd="35dp"
         android:layout_marginRight="35dp"
-        android:onClick="goToBoardScreen"
+        android:onClick="goTo1pBoardScreen"
         android:text="@string/o"
         android:textColor="#A0522D"
         android:textSize="28sp"

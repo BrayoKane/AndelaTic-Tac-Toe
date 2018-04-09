@@ -20,9 +20,15 @@ public class GameMode extends AppCompatActivity {
         tv2.setText(Html.fromHtml(getString(R.string._1p_vs_2p)));
     }
 
-    public void goToMarkerScreen(View view) {
-        Intent i = new Intent(GameMode.this, MarkerScreen.class);
+    public void goTo1pMarkerScreen(View view) {
+        Intent i = new Intent(GameMode.this, _1P_MarkerSelection.class);
         startActivity(i);
+
+    }
+
+    public void goToMarkerScreen(View view) {
+        Intent j = new Intent(GameMode.this, _2P_MarkerSelection.class);
+        startActivity(j);
     }
 
 

@@ -28,7 +28,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:gravity="start|center_vertical"
-        android:onClick="goToMarkerScreen"
+        android:onClick="goTo1pMarkerScreen"
         android:text="@string/_1p"
         android:textColor="#A0522D"
         android:textStyle="bold" />

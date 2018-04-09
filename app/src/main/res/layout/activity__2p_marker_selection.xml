@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.tic_tac_toe._2P_MarkerSelection">
+
+
+    <TextView
+        android:id="@+id/Text_marker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="34dp"
+        android:paddingBottom="65dp"
+        android:text="@string/select_markerText"
+        android:textColor="#8B4513"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/optionA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Text_marker"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp"
+        android:onClick="goToBoardScreen"
+        android:text="@string/x"
+        android:textColor="#A0522D"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/optionA"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:text="@string/or"
+        android:textColor="#0000ff"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/optionB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Text_marker"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:onClick="goToBoardScreen"
+        android:text="@string/o"
+        android:textColor="#A0522D"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="goBackToModeScreen"
+        android:text="@string/backINmarker"
+        android:textColor="#A0522D"
+        android:textStyle="bold" />
+</RelativeLayout>

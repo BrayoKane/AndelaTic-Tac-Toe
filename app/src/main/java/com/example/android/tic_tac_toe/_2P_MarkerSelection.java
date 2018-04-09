@@ -5,19 +5,19 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class MarkerScreen extends AppCompatActivity {
+public class _2P_MarkerSelection extends AppCompatActivity {
     public static final String OPTION = "option";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_marker_screen);
+        setContentView(R.layout.activity__2p_marker_selection);
     }
 
     public void goToBoardScreen(View view) {
         int id = view.getId();
 
-        Intent i = new Intent(MarkerScreen.this, BoardSelection.class);
+        Intent i = new Intent(_2P_MarkerSelection.this, _2P_BoardSelection.class);
         if (id == R.id.optionB) {
             i.putExtra(OPTION, 1);
         } else {
@@ -28,7 +28,7 @@ public class MarkerScreen extends AppCompatActivity {
     }
 
     public void goBackToModeScreen(View view) {
-        Intent j = new Intent(MarkerScreen.this, GameMode.class);
+        Intent j = new Intent(_2P_MarkerSelection.this, GameMode.class);
         startActivity(j);
     }
 }

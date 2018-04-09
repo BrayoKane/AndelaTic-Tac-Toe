@@ -7,7 +7,7 @@ import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 
-public class _1p_board_selection extends AppCompatActivity {
+public class _1P_BoardSelection extends AppCompatActivity {
     private int option = 0;
 
     @Override
@@ -15,7 +15,7 @@ public class _1p_board_selection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__1p_board_selection);
 
-        option = getIntent().getIntExtra(MarkerScreen.OPTION, 0);
+        option = getIntent().getIntExtra(_2P_MarkerSelection.OPTION, 0);
 
         TextView tv4 = findViewById(R.id._1p_3by3);
         tv4.setText(Html.fromHtml(getString(R.string._1p_3_x_3)));
@@ -27,25 +27,25 @@ public class _1p_board_selection extends AppCompatActivity {
     }
 
     public void goTo1p_3by3(View view) {
-        Intent i = new Intent(_1p_board_selection.this, _1P_3by3.class);
-        i.putExtra(MarkerScreen.OPTION, option);
+        Intent i = new Intent(_1P_BoardSelection.this, _1P_3by3.class);
+        i.putExtra(_2P_MarkerSelection.OPTION, option);
         startActivity(i);
     }
 
     public void goTo1p_4by4(View view) {
-        Intent j = new Intent(_1p_board_selection.this, _1P_4by4.class);
-        j.putExtra(MarkerScreen.OPTION, option);
+        Intent j = new Intent(_1P_BoardSelection.this, _1P_4by4.class);
+        j.putExtra(_2P_MarkerSelection.OPTION, option);
         startActivity(j);
     }
 
     public void goTo1p_5by5(View view) {
-        Intent k = new Intent(_1p_board_selection.this, _1P_5by5.class);
-        k.putExtra(MarkerScreen.OPTION, option);
+        Intent k = new Intent(_1P_BoardSelection.this, _1P_5by5.class);
+        k.putExtra(_2P_MarkerSelection.OPTION, option);
         startActivity(k);
     }
 
     public void goBackToMarkerScreen(View view) {
-        Intent l = new Intent(_1p_board_selection.this, MarkerScreen.class);
+        Intent l = new Intent(_1P_BoardSelection.this, _2P_MarkerSelection.class);
         l.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(l);
     }
