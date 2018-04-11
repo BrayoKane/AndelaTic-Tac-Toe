@@ -12,8 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener {
-    boolean PLAYER_X = true;
-    int TURN_COUNT = 0;
+    boolean playerX = true;
+    int turnCount = 0;
 
     Button button00;
     Button button01;
@@ -34,9 +34,9 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
 
     Button buttonReset, buttonQuit;
 
-    TextView tvState;
+    TextView gameStateInfo;
 
-    int[][] boardStatus = new int[4][4];
+    int[][] gameBoardStatus = new int[4][4];
 
     private boolean quit = false;
 
@@ -46,7 +46,7 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
         setContentView(R.layout.activity__2p_4by4);
 
         int option = getIntent().getIntExtra(_2P_MarkerSelection.OPTION, 0);
-        PLAYER_X = option == 0;
+        playerX = option == 0;
 
         button00 = findViewById(R.id.button00);
         button01 = findViewById(R.id.button01);
@@ -66,7 +66,7 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
         button33 = findViewById(R.id.button33);
         buttonReset = findViewById(R.id.resetButton);
         buttonQuit = findViewById(R.id.quitButton);
-        tvState = findViewById(R.id.tvState);
+        gameStateInfo = findViewById(R.id.infoGameState);
 
         buttonQuit.setOnClickListener(this);
         buttonReset.setOnClickListener(this);
@@ -87,7 +87,7 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
         button32.setOnClickListener(this);
         button33.setOnClickListener(this);
 
-        initializeBoardStatus();
+        initializeGameBoardStatus();
     }
 
     @Override
@@ -96,193 +96,193 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
 
         switch (view.getId()) {
             case R.id.button00:
-                if (PLAYER_X) {
+                if (playerX) {
                     button00.setText("X");
-                    boardStatus[0][0] = 1;
+                    gameBoardStatus[0][0] = 1;
                 } else {
                     button00.setText("O");
 
-                    boardStatus[0][0] = 0;
+                    gameBoardStatus[0][0] = 0;
                 }
                 button00.setEnabled(false);
                 break;
 
             case R.id.button01:
-                if (PLAYER_X) {
+                if (playerX) {
                     button01.setText("X");
-                    boardStatus[0][1] = 1;
+                    gameBoardStatus[0][1] = 1;
                 } else {
                     button01.setText("O");
 
-                    boardStatus[0][1] = 0;
+                    gameBoardStatus[0][1] = 0;
                 }
                 button01.setEnabled(false);
                 break;
 
             case R.id.button02:
-                if (PLAYER_X) {
+                if (playerX) {
                     button02.setText("X");
-                    boardStatus[0][2] = 1;
+                    gameBoardStatus[0][2] = 1;
                 } else {
                     button02.setText("O");
 
-                    boardStatus[0][2] = 0;
+                    gameBoardStatus[0][2] = 0;
                 }
                 button02.setEnabled(false);
                 break;
 
             case R.id.button03:
-                if (PLAYER_X) {
+                if (playerX) {
                     button03.setText("X");
-                    boardStatus[0][3] = 1;
+                    gameBoardStatus[0][3] = 1;
                 } else {
                     button03.setText("O");
 
-                    boardStatus[0][3] = 0;
+                    gameBoardStatus[0][3] = 0;
                 }
                 button03.setEnabled(false);
                 break;
 
             case R.id.button10:
-                if (PLAYER_X) {
+                if (playerX) {
                     button10.setText("X");
-                    boardStatus[1][0] = 1;
+                    gameBoardStatus[1][0] = 1;
                 } else {
                     button10.setText("O");
 
-                    boardStatus[1][0] = 0;
+                    gameBoardStatus[1][0] = 0;
                 }
                 button10.setEnabled(false);
                 break;
 
             case R.id.button11:
-                if (PLAYER_X) {
+                if (playerX) {
                     button11.setText("X");
-                    boardStatus[1][1] = 1;
+                    gameBoardStatus[1][1] = 1;
                 } else {
                     button11.setText("O");
 
-                    boardStatus[1][1] = 0;
+                    gameBoardStatus[1][1] = 0;
                 }
                 button11.setEnabled(false);
                 break;
 
             case R.id.button12:
-                if (PLAYER_X) {
+                if (playerX) {
                     button12.setText("X");
-                    boardStatus[1][2] = 1;
+                    gameBoardStatus[1][2] = 1;
                 } else {
                     button12.setText("O");
 
-                    boardStatus[1][2] = 0;
+                    gameBoardStatus[1][2] = 0;
                 }
                 button12.setEnabled(false);
                 break;
 
             case R.id.button13:
-                if (PLAYER_X) {
+                if (playerX) {
                     button13.setText("X");
-                    boardStatus[1][3] = 1;
+                    gameBoardStatus[1][3] = 1;
                 } else {
                     button13.setText("O");
 
-                    boardStatus[1][3] = 0;
+                    gameBoardStatus[1][3] = 0;
                 }
                 button13.setEnabled(false);
                 break;
 
             case R.id.button20:
-                if (PLAYER_X) {
+                if (playerX) {
                     button20.setText("X");
-                    boardStatus[2][0] = 1;
+                    gameBoardStatus[2][0] = 1;
                 } else {
                     button20.setText("O");
 
-                    boardStatus[2][0] = 0;
+                    gameBoardStatus[2][0] = 0;
                 }
                 button20.setEnabled(false);
                 break;
 
             case R.id.button21:
-                if (PLAYER_X) {
+                if (playerX) {
                     button21.setText("X");
-                    boardStatus[2][1] = 1;
+                    gameBoardStatus[2][1] = 1;
                 } else {
                     button21.setText("O");
 
-                    boardStatus[2][1] = 0;
+                    gameBoardStatus[2][1] = 0;
                 }
                 button21.setEnabled(false);
                 break;
 
             case R.id.button22:
-                if (PLAYER_X) {
+                if (playerX) {
                     button22.setText("X");
-                    boardStatus[2][2] = 1;
+                    gameBoardStatus[2][2] = 1;
                 } else {
                     button22.setText("O");
 
-                    boardStatus[2][2] = 0;
+                    gameBoardStatus[2][2] = 0;
                 }
                 button22.setEnabled(false);
                 break;
 
             case R.id.button23:
-                if (PLAYER_X) {
+                if (playerX) {
                     button23.setText("X");
-                    boardStatus[2][3] = 1;
+                    gameBoardStatus[2][3] = 1;
                 } else {
                     button23.setText("O");
 
-                    boardStatus[2][3] = 0;
+                    gameBoardStatus[2][3] = 0;
                 }
                 button23.setEnabled(false);
                 break;
 
             case R.id.button30:
-                if (PLAYER_X) {
+                if (playerX) {
                     button30.setText("X");
-                    boardStatus[3][0] = 1;
+                    gameBoardStatus[3][0] = 1;
                 } else {
                     button30.setText("O");
 
-                    boardStatus[3][0] = 0;
+                    gameBoardStatus[3][0] = 0;
                 }
                 button30.setEnabled(false);
                 break;
 
             case R.id.button31:
-                if (PLAYER_X) {
+                if (playerX) {
                     button31.setText("X");
-                    boardStatus[3][1] = 1;
+                    gameBoardStatus[3][1] = 1;
                 } else {
                     button31.setText("O");
 
-                    boardStatus[3][1] = 0;
+                    gameBoardStatus[3][1] = 0;
                 }
                 button31.setEnabled(false);
                 break;
 
             case R.id.button32:
-                if (PLAYER_X) {
+                if (playerX) {
                     button32.setText("X");
-                    boardStatus[3][2] = 1;
+                    gameBoardStatus[3][2] = 1;
                 } else {
                     button32.setText("O");
 
-                    boardStatus[3][2] = 0;
+                    gameBoardStatus[3][2] = 0;
                 }
                 button32.setEnabled(false);
                 break;
 
             case R.id.button33:
-                if (PLAYER_X) {
+                if (playerX) {
                     button33.setText("X");
-                    boardStatus[3][3] = 1;
+                    gameBoardStatus[3][3] = 1;
                 } else {
                     button33.setText("O");
 
-                    boardStatus[3][3] = 0;
+                    gameBoardStatus[3][3] = 0;
                 }
                 button33.setEnabled(false);
                 break;
@@ -316,31 +316,31 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
         if (resetButtonPressed) {
             resetBoard();
         } else {
-            TURN_COUNT++;
-            PLAYER_X = !PLAYER_X;
+            turnCount++;
+            playerX = !playerX;
 
-            if (PLAYER_X) {
-                setInfo("Player X's turn");
+            if (playerX) {
+                setGameStateInfo("Player X's turn");
             }
-            if (!PLAYER_X) {
-                setInfo("Player O's turn");
+            if (!playerX) {
+                setGameStateInfo("Player O's turn");
             }
-            if (TURN_COUNT == 16) {
+            if (turnCount == 16) {
                 ScoreStore.draws++;
                 result("The game is a DRAW!");
             }
-            checkWinner();
+            checkForWinner();
         }
     }
 
-    private void checkWinner() {
+    private void checkForWinner() {
         for (int i = 0; i < 4; i++) {
-            if (boardStatus[i][0] == boardStatus[i][1] && boardStatus[i][0] == boardStatus[i][2] && boardStatus[i][0] == boardStatus[i][3]) {
-                if (boardStatus[i][0] == 1) {
+            if (gameBoardStatus[i][0] == gameBoardStatus[i][1] && gameBoardStatus[i][0] == gameBoardStatus[i][2] && gameBoardStatus[i][0] == gameBoardStatus[i][3]) {
+                if (gameBoardStatus[i][0] == 1) {
                     ScoreStore.xWins++;
                     result("Winner : Player X!\n" + "\t \t \t row " + (i + 1));
                     break;
-                } else if (boardStatus[i][0] == 0) {
+                } else if (gameBoardStatus[i][0] == 0) {
                     ScoreStore.oWins++;
                     result("Winner : Player O!\n" + "\t \t \t row " + (i + 1));
                     break;
@@ -348,39 +348,39 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
             }
         }
         for (int i = 0; i < 4; i++) {
-            if (boardStatus[0][i] == boardStatus[1][i] && boardStatus[0][i] == boardStatus[2][i] && boardStatus[0][i] == boardStatus[3][i]) {
-                if (boardStatus[0][i] == 1) {
+            if (gameBoardStatus[0][i] == gameBoardStatus[1][i] && gameBoardStatus[0][i] == gameBoardStatus[2][i] && gameBoardStatus[0][i] == gameBoardStatus[3][i]) {
+                if (gameBoardStatus[0][i] == 1) {
                     ScoreStore.xWins++;
                     result("Winner : Player X!\n" + "\t column " + (i + 1));
                     break;
-                } else if (boardStatus[0][i] == 0) {
+                } else if (gameBoardStatus[0][i] == 0) {
                     ScoreStore.oWins++;
                     result("Winner : Player O!\n" + "\t column " + (i + 1));
                     break;
                 }
             }
         }
-        if (boardStatus[0][0] == boardStatus[1][1] && boardStatus[0][0] == boardStatus[2][2] && boardStatus[0][0] == boardStatus[3][3]) {
-            if (boardStatus[0][0] == 1) {
+        if (gameBoardStatus[0][0] == gameBoardStatus[1][1] && gameBoardStatus[0][0] == gameBoardStatus[2][2] && gameBoardStatus[0][0] == gameBoardStatus[3][3]) {
+            if (gameBoardStatus[0][0] == 1) {
                 ScoreStore.xWins++;
                 result("Winner : Player X!\n \t \tFirst Diagonal");
-            } else if (boardStatus[0][0] == 0) {
+            } else if (gameBoardStatus[0][0] == 0) {
                 ScoreStore.oWins++;
                 result("Winner : Player O!\n \t \tFirst Diagonal");
             }
         }
-        if (boardStatus[0][3] == boardStatus[1][2] && boardStatus[0][3] == boardStatus[2][1] && boardStatus[0][3] == boardStatus[3][0]) {
-            if (boardStatus[0][3] == 1) {
+        if (gameBoardStatus[0][3] == gameBoardStatus[1][2] && gameBoardStatus[0][3] == gameBoardStatus[2][1] && gameBoardStatus[0][3] == gameBoardStatus[3][0]) {
+            if (gameBoardStatus[0][3] == 1) {
                 ScoreStore.xWins++;
                 result("Winner : Player X!\n \t \tSecond Diagonal");
-            } else if (boardStatus[0][3] == 0) {
+            } else if (gameBoardStatus[0][3] == 0) {
                 ScoreStore.oWins++;
                 result("Winner : Player O!\n \t \tSecond Diagonal");
             }
         }
     }
 
-    private void enableAllBoxes(boolean value) {
+    private void enableAllButtons(boolean value) {
         button00.setEnabled(value);
         button01.setEnabled(value);
         button02.setEnabled(value);
@@ -400,8 +400,8 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
     }
 
     private void result(String winner) {
-        setInfo(winner);
-        enableAllBoxes(false);
+        setGameStateInfo(winner);
+        enableAllButtons(false);
     }
 
     public void showScoreBoard(View view) {
@@ -447,26 +447,26 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
         button32.setText("");
         button33.setText("");
 
-        enableAllBoxes(true);
+        enableAllButtons(true);
 
-        PLAYER_X = true;
-        TURN_COUNT = 0;
+        playerX = true;
+        turnCount = 0;
 
-        initializeBoardStatus();
+        initializeGameBoardStatus();
 
-        setInfo("Start Again!");
+        setGameStateInfo("Start Again!");
 
         Toast.makeText(this, "Board Reset", Toast.LENGTH_SHORT).show();
     }
 
-    private void setInfo(String text) {
-        tvState.setText(text);
+    private void setGameStateInfo(String text) {
+        gameStateInfo.setText(text);
     }
 
-    private void initializeBoardStatus() {
+    private void initializeGameBoardStatus() {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                boardStatus[i][j] = -1;
+                gameBoardStatus[i][j] = -1;
 
             }
         }
