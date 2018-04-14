@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@drawable/dialog_bg"
     android:padding="16dp">
 
     <ImageButton
@@ -43,8 +44,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="2dp"
                 android:layout_weight="1"
+                android:background="@drawable/score_shape"
                 android:gravity="center"
                 android:text="@string/scoreboard_x_s_win"
                 android:textColor="#000000"
@@ -53,21 +54,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/scoreboard_o_s_win"
                 android:textColor="#000000"
+                android:background="@drawable/score_shape"
                 android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:background="@drawable/score_shape"
                 android:text="@string/scoreboard_draw"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -82,6 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:background="@drawable/score_shape"
                 android:text=""
                 android:textColor="#000000"
                 android:textSize="28sp" />
@@ -91,6 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/score_shape"
                 android:gravity="center"
                 android:text=""
                 android:textColor="#000000"
@@ -100,6 +101,7 @@
                 android:id="@+id/draw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/score_shape"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text=""

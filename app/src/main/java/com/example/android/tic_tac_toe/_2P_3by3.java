@@ -71,7 +71,6 @@ public class _2P_3by3 extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View view) {
-        boolean resetButtonPressed = false;
 
         switch (view.getId()) {
             case R.id.button00:
@@ -84,6 +83,7 @@ public class _2P_3by3 extends AppCompatActivity implements View.OnClickListener 
                     gameBoardStatus[0][0] = 0;
                 }
                 button00.setEnabled(false);
+                nextTurn();
                 break;
 
             case R.id.button01:
@@ -96,6 +96,7 @@ public class _2P_3by3 extends AppCompatActivity implements View.OnClickListener 
                     gameBoardStatus[0][1] = 0;
                 }
                 button01.setEnabled(false);
+                nextTurn();
                 break;
 
             case R.id.button02:
@@ -108,6 +109,7 @@ public class _2P_3by3 extends AppCompatActivity implements View.OnClickListener 
                     gameBoardStatus[0][2] = 0;
                 }
                 button02.setEnabled(false);
+                nextTurn();
                 break;
 
             case R.id.button10:
@@ -120,6 +122,7 @@ public class _2P_3by3 extends AppCompatActivity implements View.OnClickListener 
                     gameBoardStatus[1][0] = 0;
                 }
                 button10.setEnabled(false);
+                nextTurn();
                 break;
 
             case R.id.button11:
@@ -132,6 +135,7 @@ public class _2P_3by3 extends AppCompatActivity implements View.OnClickListener 
                     gameBoardStatus[1][1] = 0;
                 }
                 button11.setEnabled(false);
+                nextTurn();
                 break;
 
             case R.id.button12:
@@ -144,6 +148,7 @@ public class _2P_3by3 extends AppCompatActivity implements View.OnClickListener 
                     gameBoardStatus[1][2] = 0;
                 }
                 button12.setEnabled(false);
+                nextTurn();
                 break;
 
             case R.id.button20:
@@ -156,6 +161,7 @@ public class _2P_3by3 extends AppCompatActivity implements View.OnClickListener 
                     gameBoardStatus[2][0] = 0;
                 }
                 button20.setEnabled(false);
+                nextTurn();
                 break;
 
             case R.id.button21:
@@ -168,6 +174,7 @@ public class _2P_3by3 extends AppCompatActivity implements View.OnClickListener 
                     gameBoardStatus[2][1] = 0;
                 }
                 button21.setEnabled(false);
+                nextTurn();
                 break;
 
             case R.id.button22:
@@ -180,10 +187,11 @@ public class _2P_3by3 extends AppCompatActivity implements View.OnClickListener 
                     gameBoardStatus[2][2] = 0;
                 }
                 button22.setEnabled(false);
+                nextTurn();
                 break;
 
             case R.id.resetButton:
-                resetButtonPressed = true;
+                resetBoard();
                 break;
             case R.id.quitButton:
                 if (quit) {
@@ -207,24 +215,23 @@ public class _2P_3by3 extends AppCompatActivity implements View.OnClickListener 
             default:
                 break;
         }
-        if (resetButtonPressed) {
-            resetBoard();
-        } else {
-            turnCount++;
-            playerX = !playerX;
+    }
 
-            if (playerX) {
-                setGameStateInfo("Player X's turn");
-            }
-            if (!playerX) {
-                setGameStateInfo("Player O's turn");
-            }
-            if (turnCount == 9) {
-                ScoreStore.draws++;
-                result("The game is a DRAW!");
-            }
-            checkForWinner();
+    private void nextTurn() {
+        turnCount++;
+        playerX = !playerX;
+
+        if (playerX) {
+            setGameStateInfo("Player X's turn");
         }
+        if (!playerX) {
+            setGameStateInfo("Player O's turn");
+        }
+        if (turnCount == 9) {
+            ScoreStore.draws++;
+            result("The game is a DRAW!");
+        }
+        checkForWinner();
     }
 
     private void checkForWinner() {
