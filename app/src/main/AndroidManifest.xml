@@ -21,20 +21,17 @@
         </activity>
         <activity
             android:name=".GameMode"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait" />
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name="._2P_MarkerSelection"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait" />
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name="._2P_BoardSelection"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
             android:name=".WelcomeScreen"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait" />
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name="._2P_3by3"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -53,8 +50,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="._1P_MarkerSelection"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait" />
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name="._1P_3by3"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -67,6 +63,9 @@
             android:name="._1P_5by5"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".AboutActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
     </application>
 
 </manifest>

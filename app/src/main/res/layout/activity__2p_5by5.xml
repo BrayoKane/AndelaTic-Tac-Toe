@@ -22,30 +22,55 @@
                 android:id="@+id/button00"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button01"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button02"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button03"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button04"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
 
@@ -60,30 +85,55 @@
                 android:id="@+id/button10"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button11"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button12"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button13"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button14"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
 
@@ -98,30 +148,55 @@
                 android:id="@+id/button20"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button21"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button22"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button23"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button24"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
 
@@ -136,30 +211,55 @@
                 android:id="@+id/button30"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button31"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button32"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button33"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button34"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
 
@@ -174,30 +274,55 @@
                 android:id="@+id/button40"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button41"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button42"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button43"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
             <Button
                 android:id="@+id/button44"
                 style="@style/my_box5"
                 android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
                 android:text="" />
 
 
@@ -211,7 +336,11 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:text=" "
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/space_2p5"
         android:textColor="#000000"
         android:textSize="28sp" />
 
@@ -224,6 +353,10 @@
         android:layout_alignTop="@+id/quitButton"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:background="@drawable/my_button_shape"
         android:text="@string/resetButton"
         android:textColor="#ffffff" />
@@ -236,6 +369,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:background="@drawable/my_button_shape"
         android:onClick="showScoreBoard"
         android:text="@string/scoreboard"
@@ -259,6 +396,10 @@
         android:layout_toRightOf="@id/ScoreBoardButton"
         android:background="@drawable/my_button_shape"
         android:text="@string/quit"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:textColor="#ffffff" />
 
 </RelativeLayout>

@@ -3,7 +3,7 @@ package com.example.android.tic_tac_toe;
 public class Cell {
     private int x, y;
 
-    public Cell(int x, int y) {
+    Cell(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -23,8 +23,7 @@ public class Cell {
 
         Cell cell = (Cell) o;
 
-        if (x != cell.x) return false;
-        return y == cell.y;
+        return x == cell.x && y == cell.y;
     }
 
     @Override

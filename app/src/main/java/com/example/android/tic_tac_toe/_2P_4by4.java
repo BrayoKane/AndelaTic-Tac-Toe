@@ -11,32 +11,58 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener {
     boolean playerX = true;
     int turnCount = 0;
 
+    @BindView(R.id.button00)
     Button button00;
+    @BindView(R.id.button01)
     Button button01;
+    @BindView(R.id.button02)
     Button button02;
+    @BindView(R.id.button03)
     Button button03;
+    @BindView(R.id.button10)
     Button button10;
+    @BindView(R.id.button11)
     Button button11;
+    @BindView(R.id.button12)
     Button button12;
+    @BindView(R.id.button13)
     Button button13;
+    @BindView(R.id.button20)
     Button button20;
+    @BindView(R.id.button21)
     Button button21;
+    @BindView(R.id.button22)
     Button button22;
+    @BindView(R.id.button23)
     Button button23;
+    @BindView(R.id.button30)
     Button button30;
+    @BindView(R.id.button31)
     Button button31;
+    @BindView(R.id.button32)
     Button button32;
+    @BindView(R.id.button33)
     Button button33;
 
-    Button buttonReset, buttonQuit;
-
+    @BindView(R.id.resetButton)
+    Button buttonReset;
+    @BindView(R.id.quitButton)
+    Button buttonQuit;
+    @BindView(R.id.infoGameState)
     TextView gameStateInfo;
 
     int[][] gameBoardStatus = new int[4][4];
+    int unicodeW = 0x1F60A;
+    int unicodeD = 0x1F61B;
+    String emojiWin = getEmojiByUnicodeW(unicodeW);
+    String emojiDraw = getEmojiByUnicodeD(unicodeD);
 
     private boolean quit = false;
 
@@ -48,25 +74,7 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
         int option = getIntent().getIntExtra(_2P_MarkerSelection.OPTION, 0);
         playerX = option == 0;
 
-        button00 = findViewById(R.id.button00);
-        button01 = findViewById(R.id.button01);
-        button02 = findViewById(R.id.button02);
-        button03 = findViewById(R.id.button03);
-        button10 = findViewById(R.id.button10);
-        button11 = findViewById(R.id.button11);
-        button12 = findViewById(R.id.button12);
-        button13 = findViewById(R.id.button13);
-        button20 = findViewById(R.id.button20);
-        button21 = findViewById(R.id.button21);
-        button22 = findViewById(R.id.button22);
-        button23 = findViewById(R.id.button23);
-        button30 = findViewById(R.id.button30);
-        button31 = findViewById(R.id.button31);
-        button32 = findViewById(R.id.button32);
-        button33 = findViewById(R.id.button33);
-        buttonReset = findViewById(R.id.resetButton);
-        buttonQuit = findViewById(R.id.quitButton);
-        gameStateInfo = findViewById(R.id.infoGameState);
+        ButterKnife.bind(this);
 
         buttonQuit.setOnClickListener(this);
         buttonReset.setOnClickListener(this);
@@ -90,206 +98,90 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
         initializeGameBoardStatus();
     }
 
+    private void playerSelectCell(Cell cell, Button button) {
+        button.setEnabled(false);
+        if (playerX) {
+            button.setText("X");
+            gameBoardStatus[cell.getX()][cell.getY()] = 1;
+        } else {
+            button.setText("O");
+            gameBoardStatus[cell.getX()][cell.getY()] = 0;
+        }
+        nextTurn();
+    }
+
     @Override
     public void onClick(View view) {
-        boolean resetButtonPressed = false;
 
         switch (view.getId()) {
             case R.id.button00:
-                if (playerX) {
-                    button00.setText("X");
-                    gameBoardStatus[0][0] = 1;
-                } else {
-                    button00.setText("O");
-
-                    gameBoardStatus[0][0] = 0;
-                }
-                button00.setEnabled(false);
+                playerSelectCell(new Cell(0, 0), button00);
                 break;
 
             case R.id.button01:
-                if (playerX) {
-                    button01.setText("X");
-                    gameBoardStatus[0][1] = 1;
-                } else {
-                    button01.setText("O");
-
-                    gameBoardStatus[0][1] = 0;
-                }
-                button01.setEnabled(false);
+                playerSelectCell(new Cell(0, 1), button01);
                 break;
 
             case R.id.button02:
-                if (playerX) {
-                    button02.setText("X");
-                    gameBoardStatus[0][2] = 1;
-                } else {
-                    button02.setText("O");
-
-                    gameBoardStatus[0][2] = 0;
-                }
-                button02.setEnabled(false);
+                playerSelectCell(new Cell(0, 2), button02);
                 break;
 
             case R.id.button03:
-                if (playerX) {
-                    button03.setText("X");
-                    gameBoardStatus[0][3] = 1;
-                } else {
-                    button03.setText("O");
-
-                    gameBoardStatus[0][3] = 0;
-                }
-                button03.setEnabled(false);
+                playerSelectCell(new Cell(0, 3), button03);
                 break;
 
             case R.id.button10:
-                if (playerX) {
-                    button10.setText("X");
-                    gameBoardStatus[1][0] = 1;
-                } else {
-                    button10.setText("O");
-
-                    gameBoardStatus[1][0] = 0;
-                }
-                button10.setEnabled(false);
+                playerSelectCell(new Cell(1, 0), button10);
                 break;
 
             case R.id.button11:
-                if (playerX) {
-                    button11.setText("X");
-                    gameBoardStatus[1][1] = 1;
-                } else {
-                    button11.setText("O");
-
-                    gameBoardStatus[1][1] = 0;
-                }
-                button11.setEnabled(false);
+                playerSelectCell(new Cell(1, 1), button11);
                 break;
 
             case R.id.button12:
-                if (playerX) {
-                    button12.setText("X");
-                    gameBoardStatus[1][2] = 1;
-                } else {
-                    button12.setText("O");
-
-                    gameBoardStatus[1][2] = 0;
-                }
-                button12.setEnabled(false);
+                playerSelectCell(new Cell(1, 2), button12);
                 break;
 
             case R.id.button13:
-                if (playerX) {
-                    button13.setText("X");
-                    gameBoardStatus[1][3] = 1;
-                } else {
-                    button13.setText("O");
-
-                    gameBoardStatus[1][3] = 0;
-                }
-                button13.setEnabled(false);
+                playerSelectCell(new Cell(1, 3), button13);
                 break;
 
             case R.id.button20:
-                if (playerX) {
-                    button20.setText("X");
-                    gameBoardStatus[2][0] = 1;
-                } else {
-                    button20.setText("O");
-
-                    gameBoardStatus[2][0] = 0;
-                }
-                button20.setEnabled(false);
+                playerSelectCell(new Cell(2, 0), button20);
                 break;
 
             case R.id.button21:
-                if (playerX) {
-                    button21.setText("X");
-                    gameBoardStatus[2][1] = 1;
-                } else {
-                    button21.setText("O");
-
-                    gameBoardStatus[2][1] = 0;
-                }
-                button21.setEnabled(false);
+                playerSelectCell(new Cell(2, 1), button21);
                 break;
 
             case R.id.button22:
-                if (playerX) {
-                    button22.setText("X");
-                    gameBoardStatus[2][2] = 1;
-                } else {
-                    button22.setText("O");
-
-                    gameBoardStatus[2][2] = 0;
-                }
-                button22.setEnabled(false);
+                playerSelectCell(new Cell(2, 2), button22);
                 break;
 
             case R.id.button23:
-                if (playerX) {
-                    button23.setText("X");
-                    gameBoardStatus[2][3] = 1;
-                } else {
-                    button23.setText("O");
-
-                    gameBoardStatus[2][3] = 0;
-                }
-                button23.setEnabled(false);
+                playerSelectCell(new Cell(2, 3), button23);
                 break;
 
             case R.id.button30:
-                if (playerX) {
-                    button30.setText("X");
-                    gameBoardStatus[3][0] = 1;
-                } else {
-                    button30.setText("O");
-
-                    gameBoardStatus[3][0] = 0;
-                }
-                button30.setEnabled(false);
+                playerSelectCell(new Cell(3, 0), button30);
                 break;
 
             case R.id.button31:
-                if (playerX) {
-                    button31.setText("X");
-                    gameBoardStatus[3][1] = 1;
-                } else {
-                    button31.setText("O");
-
-                    gameBoardStatus[3][1] = 0;
-                }
-                button31.setEnabled(false);
+                playerSelectCell(new Cell(3, 1), button31);
                 break;
 
             case R.id.button32:
-                if (playerX) {
-                    button32.setText("X");
-                    gameBoardStatus[3][2] = 1;
-                } else {
-                    button32.setText("O");
-
-                    gameBoardStatus[3][2] = 0;
-                }
-                button32.setEnabled(false);
+                playerSelectCell(new Cell(3, 2), button32);
                 break;
 
             case R.id.button33:
-                if (playerX) {
-                    button33.setText("X");
-                    gameBoardStatus[3][3] = 1;
-                } else {
-                    button33.setText("O");
-
-                    gameBoardStatus[3][3] = 0;
-                }
-                button33.setEnabled(false);
+                playerSelectCell(new Cell(3, 3), button33);
                 break;
 
             case R.id.resetButton:
-                resetButtonPressed = true;
+                resetBoard();
                 break;
+
             case R.id.quitButton:
                 if (quit) {
                     Intent w = new Intent(this, WelcomeScreen.class);
@@ -302,48 +194,49 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
 
                 quit = true;
                 Toast.makeText(this, "Click again to quit", Toast.LENGTH_SHORT).show();
-                buttonQuit.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        quit = false;
-                    }
-                }, 1000);
+                buttonQuit.postDelayed(() -> quit = false, 1000);
                 break;
             default:
                 break;
-
-        }
-        if (resetButtonPressed) {
-            resetBoard();
-        } else {
-            turnCount++;
-            playerX = !playerX;
-
-            if (playerX) {
-                setGameStateInfo("Player X's turn");
-            }
-            if (!playerX) {
-                setGameStateInfo("Player O's turn");
-            }
-            if (turnCount == 16) {
-                ScoreStore.draws++;
-                result("The game is a DRAW!");
-            }
-            checkForWinner();
         }
     }
 
-    private void checkForWinner() {
+    private void nextTurn() {
+        turnCount++;
+        playerX = !playerX;
+
+        if (playerX) {
+            setGameStateInfo("Player X's turn");
+        }
+        if (!playerX) {
+            setGameStateInfo("Player O's turn");
+        }
+        if (turnCount == 16 && !checkForWinner()) {
+            ScoreStore.draws++;
+            result("The game is a DRAW!" + emojiDraw);
+        }
+        checkForWinner();
+    }
+
+    public String getEmojiByUnicodeW(int unicodeW) {
+        return new String(Character.toChars(unicodeW));
+    }
+
+    public String getEmojiByUnicodeD(int unicodeD) {
+        return new String(Character.toChars(unicodeD));
+    }
+
+    private boolean checkForWinner() {
         for (int i = 0; i < 4; i++) {
             if (gameBoardStatus[i][0] == gameBoardStatus[i][1] && gameBoardStatus[i][0] == gameBoardStatus[i][2] && gameBoardStatus[i][0] == gameBoardStatus[i][3]) {
                 if (gameBoardStatus[i][0] == 1) {
                     ScoreStore.xWins++;
-                    result("Winner : Player X!\n" + "\t \t \t row " + (i + 1));
-                    break;
+                    result("Winner : Player X!" + emojiWin + "\n" + "\t \t \t row " + (i + 1));
+                    return true;
                 } else if (gameBoardStatus[i][0] == 0) {
                     ScoreStore.oWins++;
-                    result("Winner : Player O!\n" + "\t \t \t row " + (i + 1));
-                    break;
+                    result("Winner : Player O!" + emojiWin + "\n" + "\t \t \t row " + (i + 1));
+                    return true;
                 }
             }
         }
@@ -351,33 +244,38 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
             if (gameBoardStatus[0][i] == gameBoardStatus[1][i] && gameBoardStatus[0][i] == gameBoardStatus[2][i] && gameBoardStatus[0][i] == gameBoardStatus[3][i]) {
                 if (gameBoardStatus[0][i] == 1) {
                     ScoreStore.xWins++;
-                    result("Winner : Player X!\n" + "\t column " + (i + 1));
-                    break;
+                    result("Winner : Player X!" + emojiWin + "\n" + "\t column " + (i + 1));
+                    return true;
                 } else if (gameBoardStatus[0][i] == 0) {
                     ScoreStore.oWins++;
-                    result("Winner : Player O!\n" + "\t column " + (i + 1));
-                    break;
+                    result("Winner : Player O!" + emojiWin + "\n" + "\t column " + (i + 1));
+                    return true;
                 }
             }
         }
         if (gameBoardStatus[0][0] == gameBoardStatus[1][1] && gameBoardStatus[0][0] == gameBoardStatus[2][2] && gameBoardStatus[0][0] == gameBoardStatus[3][3]) {
             if (gameBoardStatus[0][0] == 1) {
                 ScoreStore.xWins++;
-                result("Winner : Player X!\n \t \tFirst Diagonal");
+                result("Winner : Player X!" + emojiWin + "\n \t \tFirst Diagonal");
+                return true;
             } else if (gameBoardStatus[0][0] == 0) {
                 ScoreStore.oWins++;
-                result("Winner : Player O!\n \t \tFirst Diagonal");
+                result("Winner : Player O!" + emojiWin + "\n \t \tFirst Diagonal");
+                return true;
             }
         }
         if (gameBoardStatus[0][3] == gameBoardStatus[1][2] && gameBoardStatus[0][3] == gameBoardStatus[2][1] && gameBoardStatus[0][3] == gameBoardStatus[3][0]) {
             if (gameBoardStatus[0][3] == 1) {
                 ScoreStore.xWins++;
-                result("Winner : Player X!\n \t \tSecond Diagonal");
+                result("Winner : Player X!" + emojiWin + "\n \t \tSecond Diagonal");
+                return true;
             } else if (gameBoardStatus[0][3] == 0) {
                 ScoreStore.oWins++;
-                result("Winner : Player O!\n \t \tSecond Diagonal");
+                result("Winner : Player O!" + emojiWin + "\n \t \tSecond Diagonal");
+                return true;
             }
         }
+        return false;
     }
 
     private void enableAllButtons(boolean value) {
@@ -405,13 +303,13 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
     }
 
     public void showScoreBoard(View view) {
-//        View v = getLayoutInflater().inflate(R.layout.view_score_sheet, null);
         final ViewGroup nullParent = null;
         View v = getLayoutInflater().inflate(R.layout.view_score_sheet, nullParent);
-        TextView xWin = v.findViewById(R.id.x_win);
-        TextView oWin = v.findViewById(R.id.o_win);
-        TextView draw = v.findViewById(R.id.draw);
+        final TextView xWin = v.findViewById(R.id.x_win);
+        final TextView oWin = v.findViewById(R.id.o_win);
+        final TextView draw = v.findViewById(R.id.draw);
         ImageButton close = v.findViewById(R.id.close_button);
+        Button reset = v.findViewById(R.id.resetScores);
 
         xWin.setText(String.valueOf(ScoreStore.xWins));
         oWin.setText(String.valueOf(ScoreStore.oWins));
@@ -421,12 +319,16 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
                 .create();
         dialog.show();
 
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
+        reset.setOnClickListener(view1 -> {
+            ScoreStore.xWins = 0;
+            ScoreStore.oWins = 0;
+            ScoreStore.draws = 0;
+            xWin.setText(String.valueOf(ScoreStore.xWins));
+            oWin.setText(String.valueOf(ScoreStore.oWins));
+            draw.setText(String.valueOf(ScoreStore.draws));
         });
+
+        close.setOnClickListener(view12 -> dialog.dismiss());
     }
 
     private void resetBoard() {
@@ -449,12 +351,12 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
 
         enableAllButtons(true);
 
-        playerX = true;
-        turnCount = 0;
+        playerX = true; //Initializing again
+        turnCount = 0; //reset number of turns back to zero
 
         initializeGameBoardStatus();
 
-        setGameStateInfo("Start Again!");
+        setGameStateInfo("Play Again!");
 
         Toast.makeText(this, "Board Reset", Toast.LENGTH_SHORT).show();
     }
@@ -470,5 +372,22 @@ public class _2P_4by4 extends AppCompatActivity implements View.OnClickListener 
 
             }
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        final ViewGroup nullParent = null;
+        View v = getLayoutInflater().inflate(R.layout.view_score_sheet, nullParent);
+        TextView xWin = v.findViewById(R.id.x_win);
+        TextView oWin = v.findViewById(R.id.o_win);
+        TextView draw = v.findViewById(R.id.draw);
+
+        ScoreStore.xWins = 0;
+        ScoreStore.oWins = 0;
+        ScoreStore.draws = 0;
+        xWin.setText(String.valueOf(ScoreStore.xWins));
+        oWin.setText(String.valueOf(ScoreStore.oWins));
+        draw.setText(String.valueOf(ScoreStore.draws));
+        super.onDestroy();
     }
 }

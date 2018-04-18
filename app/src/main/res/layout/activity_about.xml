@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.tic_tac_toe.AboutActivity">
+
+
+    <TextView
+        android:id="@+id/Text_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="@string/aboutTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="#A0522D"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/Text_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Text_about"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/textInfoAbout"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="#000000" />
+
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="goBackToWelcomeScreen"
+        android:text="@string/backINabout"
+        android:textColor="#A0522D"
+        android:textStyle="bold" />
+</RelativeLayout>

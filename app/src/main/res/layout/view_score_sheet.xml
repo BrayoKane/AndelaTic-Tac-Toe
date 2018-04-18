@@ -32,6 +32,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
     <TableLayout
+        android:id="@+id/table"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -109,5 +110,16 @@
                 android:textSize="28sp" />
         </TableRow>
     </TableLayout>
+
+    <Button
+        android:id="@+id/resetScores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/table"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="@string/resetBtnScoresheet"
+        android:textAllCaps="true"
+        android:textColor="#A0522D" />
 
 </RelativeLayout>

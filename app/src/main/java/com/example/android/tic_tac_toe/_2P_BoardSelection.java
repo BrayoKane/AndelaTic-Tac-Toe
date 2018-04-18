@@ -17,11 +17,11 @@ public class _2P_BoardSelection extends AppCompatActivity {
 
         option = getIntent().getIntExtra(_2P_MarkerSelection.OPTION, 0);
 
-        TextView tv4 = (TextView) findViewById(R.id._3by3);
+        TextView tv4 = findViewById(R.id._3by3);
         tv4.setText(Html.fromHtml(getString(R.string._3_x_3)));
-        TextView tv5 = (TextView) findViewById(R.id._4by4);
+        TextView tv5 = findViewById(R.id._4by4);
         tv5.setText(Html.fromHtml(getString(R.string._4_x_4)));
-        TextView tv6 = (TextView) findViewById(R.id._5by5);
+        TextView tv6 = findViewById(R.id._5by5);
         tv6.setText(Html.fromHtml(getString(R.string._5_x_5)));
 
     }

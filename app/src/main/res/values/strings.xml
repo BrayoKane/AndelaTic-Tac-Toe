@@ -10,12 +10,12 @@
     <string name="o">O</string>
     <string name="or">or</string>
     <string name="x">X</string>
-    <string name="select_markerText">Select the marker you prefer:</string>
-    <string name="select_modeText">Select your mode:</string>
-    <string name="select_boardText">Select your board size:</string>
-    <string name="_3_x_3"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 3 X 3]]></string>
-    <string name="_4_x_4"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 4 X 4]]></string>
-    <string name="_5_x_5"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 5 X 5]]></string>
+    <string name="select_markerText">Marker choice :</string>
+    <string name="select_modeText">Game mode:</string>
+    <string name="select_boardText">Preferable board size :</string>
+    <string name="_3_x_3"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 3 by 3]]></string>
+    <string name="_4_x_4"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 4 by 4]]></string>
+    <string name="_5_x_5"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 5 by 5]]></string>
     <string name="backINboard">Back</string>
     <string name="Welcome_vectorDesc">A tic-tac-toe vector for the welcome-screen</string>
     <string name="Splash_vectorDesc">A tic-tac-toe vector for the splash-screen</string>
@@ -28,7 +28,18 @@
     <string name="scoreboard_o_s_win">O\'s win</string>
     <string name="scoreboard_x_s_win">X\'s win</string>
     <string name="scoreboardTitle">Scoreboard</string>
-    <string name="_1p_5_x_5"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 5 X 5]]></string>
-    <string name="_1p_4_x_4"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 4 X 4]]></string>
-    <string name="_1p_3_x_3"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 3 X 3]]></string>
+    <string name="_1p_5_x_5"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 5 by 5]]></string>
+    <string name="_1p_4_x_4"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 4 by 4]]></string>
+    <string name="_1p_3_x_3"><![CDATA[ <b><big><font color=#0000ff>|</big></b> 3 by 3]]></string>
+    <string name="space_2p5" />
+    <string name="space_2p4" />
+    <string name="space_2p3" />
+    <string name="space_1p3" />
+    <string name="space_1p4" />
+    <string name="space_1p5" />
+    <string name="about">ABOUT</string>
+    <string name="backINabout">BACK</string>
+    <string name="aboutTitle">About</string>
+    <string name="textInfoAbout">\t Tic-Tac-Toe is a simple game which takes care of your boredom ; this can be traced from around the first century BC by the Roman Empire. \n\n\tIt was anciently described as "noughts and crosses" which perfectly describe the marks/symbols used by the players. \n\n\tTo win, a player attempts to block his/her opponents move while looking to place his/her markings successfully in either row/column/diagonal in an n by n board size.</string>
+    <string name="resetBtnScoresheet">Reset</string>
 </resources>

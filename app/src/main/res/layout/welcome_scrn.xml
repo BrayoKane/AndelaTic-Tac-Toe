@@ -22,21 +22,33 @@
         android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/buttonPlay"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="100dp"
         android:contentDescription="@string/Welcome_vectorDesc"
         android:src="@drawable/ic_tictactoe2" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:id="@+id/buttonAbout"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/buttonPlay"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:onClick="goToAboutScreen"
+        android:text="@string/about"
+        android:textColor="#A0522D"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonPlay"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:onClick="goToModeScreen"
         android:text="@string/play"
         android:textColor="#A0522D"
-        android:textStyle="bold" /> <!--style="@style/.."-->
+        android:textStyle="bold" />
 
 </RelativeLayout>

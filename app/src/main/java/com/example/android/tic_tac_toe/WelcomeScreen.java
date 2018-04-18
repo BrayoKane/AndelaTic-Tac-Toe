@@ -13,8 +13,13 @@ public class WelcomeScreen extends AppCompatActivity {
         setContentView(R.layout.welcome_scrn);
     }
 
-    public void goToModeScreen(View view) {
-        Intent i = new Intent(WelcomeScreen.this, GameMode.class);
+    public void goToAboutScreen(View view) {
+        Intent i = new Intent(WelcomeScreen.this, AboutActivity.class);
         startActivity(i);
+    }
+
+    public void goToModeScreen(View view) {
+        Intent j = new Intent(WelcomeScreen.this, GameMode.class);
+        startActivity(j);
     }
 }

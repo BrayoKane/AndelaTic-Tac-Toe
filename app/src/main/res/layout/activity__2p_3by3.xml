@@ -139,7 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:text=" "
+        android:text="@string/space_2p3"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"

@@ -18,6 +18,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class _1P_3by3 extends AppCompatActivity implements View.OnClickListener {
     private static List<Cell> ALL_CELLS = new ArrayList<>(9);
 
@@ -34,22 +37,43 @@ public class _1P_3by3 extends AppCompatActivity implements View.OnClickListener 
     }
 
     int turnCount = 0;
+
+    @BindView(R.id.button00)
     Button button00;
+    @BindView(R.id.button01)
     Button button01;
+    @BindView(R.id.button02)
     Button button02;
+    @BindView(R.id.button10)
     Button button10;
+    @BindView(R.id.button11)
     Button button11;
+    @BindView(R.id.button12)
     Button button12;
+    @BindView(R.id.button20)
     Button button20;
+    @BindView(R.id.button21)
     Button button21;
+    @BindView(R.id.button22)
     Button button22;
-    Button buttonReset, buttonQuit;
+
+    @BindView(R.id.resetButton)
+    Button buttonReset;
+    @BindView(R.id.quitButton)
+    Button buttonQuit;
+    @BindView(R.id.infoGameState)
     TextView gameStateInfo;
+
     int[][] gameBoardStatus = new int[3][3];
+    int unicodeW = 0x1F60A;
+    int unicodeD = 0x1F61B;
+    int unicodeL = 0x1F61E;
+    String emojiWin = getEmojiByUnicodeW(unicodeW);
+    String emojiDraw = getEmojiByUnicodeD(unicodeD);
+    String emojiLose = getEmojiByUnicodeL(unicodeL);
     private String playerMarker, computerMarker;
     private boolean playerTurn = true;
     private boolean quit = false;
-
     private Set<Cell> selectedCells = new HashSet<>(9);
 
     @Override
@@ -57,22 +81,11 @@ public class _1P_3by3 extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__1p_3by3);
 
-        int option = getIntent().getIntExtra(_2P_MarkerSelection.OPTION, 0);
+        int option = getIntent().getIntExtra(_1P_MarkerSelection.OPTION, 0);
         playerMarker = option == 0 ? "X" : "O";
         computerMarker = playerMarker.equals("X") ? "O" : "X";
 
-        button00 = findViewById(R.id.button00);
-        button01 = findViewById(R.id.button01);
-        button02 = findViewById(R.id.button02);
-        button10 = findViewById(R.id.button10);
-        button11 = findViewById(R.id.button11);
-        button12 = findViewById(R.id.button12);
-        button20 = findViewById(R.id.button20);
-        button21 = findViewById(R.id.button21);
-        button22 = findViewById(R.id.button22);
-        buttonReset = findViewById(R.id.resetButton);
-        buttonQuit = findViewById(R.id.quitButton);
-        gameStateInfo = findViewById(R.id.infoGameState);
+        ButterKnife.bind(this);
 
         buttonQuit.setOnClickListener(this);
         buttonReset.setOnClickListener(this);
@@ -142,6 +155,7 @@ public class _1P_3by3 extends AppCompatActivity implements View.OnClickListener 
             case R.id.resetButton:
                 resetBoard();
                 break;
+
             case R.id.quitButton:
                 if (quit) {
                     Intent w = new Intent(this, WelcomeScreen.class);
@@ -154,12 +168,7 @@ public class _1P_3by3 extends AppCompatActivity implements View.OnClickListener 
 
                 quit = true;
                 Toast.makeText(this, "Click again to quit", Toast.LENGTH_SHORT).show();
-                buttonQuit.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        quit = false;
-                    }
-                }, 1000);
+                buttonQuit.postDelayed(() -> quit = false, 1000);
                 break;
             default:
                 break;
@@ -174,9 +183,10 @@ public class _1P_3by3 extends AppCompatActivity implements View.OnClickListener 
                 ? "Your turn"
                 : "Computer's turn");
 
-        if (turnCount == 9) {
+        if (turnCount == 9 && !checkForWinner()) {
             ScoreStore.draws++;
-            result("The game is a DRAW!");
+            result("The game is a DRAW!" + emojiDraw);
+            return;
         }
         boolean gameWon = checkForWinner();
 
@@ -188,38 +198,35 @@ public class _1P_3by3 extends AppCompatActivity implements View.OnClickListener 
     private void computerSelectCell() {
         if (playerTurn) return;
 
-        gameStateInfo.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Set<Integer> tried = new HashSet<>();
-                for (; ; ) {
+        gameStateInfo.postDelayed(() -> {
+            Set<Integer> tried = new HashSet<>();
+            for (; ; ) {
 
-                    if (selectedCells.size() == ALL_CELLS.size())
-                        break;
-
-                    int next = 1 + new Random(System.currentTimeMillis()).nextInt(8);
-                    if (tried.contains(next))
-                        continue;
-
-                    tried.add(next);
-                    Cell nextCell = ALL_CELLS.get(next);
-                    if (selectedCells.contains(nextCell))
-                        continue;
-
-                    Button button = getButtonForCell(nextCell);
-                    if (button == null)
-                        break;
-
-                    selectedCells.add(nextCell);
-                    button.setEnabled(false);
-                    button.setText(computerMarker);
-                    gameBoardStatus[nextCell.getX()][nextCell.getY()] = computerMarker.equals("X") ? 1 : 0;
-
+                if (selectedCells.size() == ALL_CELLS.size())
                     break;
-                }
 
-                nextTurn();
+                int next = 1 + new Random(System.currentTimeMillis()).nextInt(8);
+                if (tried.contains(next))
+                    continue;
+
+                tried.add(next);
+                Cell nextCell = ALL_CELLS.get(next);
+                if (selectedCells.contains(nextCell))
+                    continue;
+
+                Button button = getButtonForCell(nextCell);
+                if (button == null)
+                    break;
+
+                selectedCells.add(nextCell);
+                button.setEnabled(false);
+                button.setText(computerMarker);
+                gameBoardStatus[nextCell.getX()][nextCell.getY()] = computerMarker.equals("X") ? 1 : 0;
+
+                break;
             }
+
+            nextTurn();
         }, 750);
     }
 
@@ -247,53 +254,115 @@ public class _1P_3by3 extends AppCompatActivity implements View.OnClickListener 
         return null;
     }
 
+    public String getEmojiByUnicodeW(int unicodeW) {
+        return new String(Character.toChars(unicodeW));
+    }
+
+    public String getEmojiByUnicodeD(int unicodeD) {
+        return new String(Character.toChars(unicodeD));
+    }
+
+    public String getEmojiByUnicodeL(int unicodeL) {
+        return new String(Character.toChars(unicodeL));
+    }
+
     private boolean checkForWinner() {
+        int option = getIntent().getIntExtra(_1P_MarkerSelection.OPTION, 0);
+
         for (int i = 0; i < 3; i++) {
             if (gameBoardStatus[i][0] == gameBoardStatus[i][1] && gameBoardStatus[i][0] == gameBoardStatus[i][2]) {
-                if (gameBoardStatus[i][0] == 1) {
-                    ScoreStore.xWins++;
-                    result("Winner : Player X!\n" + "\t \t \t row " + (i + 1));
-                    return true;
-                } else if (gameBoardStatus[i][0] == 0) {
-                    ScoreStore.oWins++;
-                    result("Winner : Player O!\n" + "\t \t \t row " + (i + 1));
-                    return true;
+                if (option == 0) {
+                    if (gameBoardStatus[i][0] == 1) {
+                        ScoreStore.xWins++;
+                        result("You won!" + emojiWin + "\n" + "\t \t row " + (i + 1));
+                        return true;
+                    } else if (gameBoardStatus[i][0] == 0) {
+                        ScoreStore.oWins++;
+                        result("Computer won!" + emojiLose + "\n" + "\t \t row " + (i + 1));
+                        return true;
+                    }
+                } else if (option == 1) {
+                    if (gameBoardStatus[i][0] == 1) {
+                        ScoreStore.xWins++;
+                        result("Computer won!" + emojiLose + "\n" + "\t \t row " + (i + 1));
+                        return true;
+                    } else if (gameBoardStatus[i][0] == 0) {
+                        ScoreStore.oWins++;
+                        result("You won!" + emojiWin + "\n" + "\t \t row " + (i + 1));
+                        return true;
+                    }
                 }
             }
         }
         for (int i = 0; i < 3; i++) {
             if (gameBoardStatus[0][i] == gameBoardStatus[1][i] && gameBoardStatus[0][i] == gameBoardStatus[2][i]) {
-                if (gameBoardStatus[0][i] == 1) {
-                    ScoreStore.xWins++;
-                    result("Winner : Player X!\n" + "\t column " + (i + 1));
-                    return true;
-                } else if (gameBoardStatus[0][i] == 0) {
-                    ScoreStore.oWins++;
-                    result("Winner : Player O!\n" + "\t column " + (i + 1));
-                    return true;
+                if (option == 0) {
+                    if (gameBoardStatus[0][i] == 1) {
+                        ScoreStore.xWins++;
+                        result("You won!" + emojiWin + "\n" + "\t column " + (i + 1));
+                        return true;
+                    } else if (gameBoardStatus[0][i] == 0) {
+                        ScoreStore.oWins++;
+                        result("Computer won!" + emojiLose + "\n" + "\t column " + (i + 1));
+                        return true;
+                    }
+                } else if (option == 1) {
+                    if (gameBoardStatus[0][i] == 1) {
+                        ScoreStore.xWins++;
+                        result("Computer won!" + emojiLose + "\n" + "\t column " + (i + 1));
+                        return true;
+                    } else if (gameBoardStatus[0][i] == 0) {
+                        ScoreStore.oWins++;
+                        result("You won!" + emojiWin + "\n" + "\t column " + (i + 1));
+                        return true;
+                    }
                 }
             }
         }
         if (gameBoardStatus[0][0] == gameBoardStatus[1][1] && gameBoardStatus[0][0] == gameBoardStatus[2][2]) {
-            if (gameBoardStatus[0][0] == 1) {
-                ScoreStore.xWins++;
-                result("Winner : Player X!\n \t \tFirst Diagonal");
-                return true;
-            } else if (gameBoardStatus[0][0] == 0) {
-                ScoreStore.oWins++;
-                result("Winner : Player O!\n \t \tFirst Diagonal");
-                return true;
+            if (option == 0) {
+                if (gameBoardStatus[0][0] == 1) {
+                    ScoreStore.xWins++;
+                    result("You won!" + emojiWin + "\n First Diagonal");
+                    return true;
+                } else if (gameBoardStatus[0][0] == 0) {
+                    ScoreStore.oWins++;
+                    result("Computer won!" + emojiLose + "\n \t \tFirst Diagonal");
+                    return true;
+                }
+            } else if (option == 1) {
+                if (gameBoardStatus[0][0] == 1) {
+                    ScoreStore.xWins++;
+                    result("Computer won!" + emojiLose + "\n \tFirst Diagonal");
+                    return true;
+                } else if (gameBoardStatus[0][0] == 0) {
+                    ScoreStore.oWins++;
+                    result("You won!" + emojiWin + " \nFirst Diagonal");
+                    return true;
+                }
             }
         }
         if (gameBoardStatus[0][2] == gameBoardStatus[1][1] && gameBoardStatus[0][2] == gameBoardStatus[2][0]) {
-            if (gameBoardStatus[0][2] == 1) {
-                ScoreStore.xWins++;
-                result("Winner : Player X!\n \t \tSecond Diagonal");
-                return true;
-            } else if (gameBoardStatus[0][2] == 0) {
-                ScoreStore.oWins++;
-                result("Winner : Player O!\n \t \tSecond Diagonal");
-                return true;
+            if (option == 0) {
+                if (gameBoardStatus[0][2] == 1) {
+                    ScoreStore.xWins++;
+                    result("You won!" + emojiWin + "\nSecond Diagonal");
+                    return true;
+                } else if (gameBoardStatus[0][2] == 0) {
+                    ScoreStore.oWins++;
+                    result("Computer won!" + emojiLose + "\n \tSecond Diagonal");
+                    return true;
+                }
+            } else {
+                if (gameBoardStatus[0][2] == 1) {
+                    ScoreStore.xWins++;
+                    result("Computer won!" + emojiLose + "\n \tSecond Diagonal");
+                    return true;
+                } else if (gameBoardStatus[0][2] == 0) {
+                    ScoreStore.oWins++;
+                    result("You won!" + emojiWin + "\n \tSecond Diagonal");
+                    return true;
+                }
             }
         }
 
@@ -318,13 +387,13 @@ public class _1P_3by3 extends AppCompatActivity implements View.OnClickListener 
     }
 
     public void showScoreBoard(View view) {
-        //        View v = getLayoutInflater().inflate(R.layout.view_score_sheet, null);
         final ViewGroup nullParent = null;
         View v = getLayoutInflater().inflate(R.layout.view_score_sheet, nullParent);
-        TextView xWin = v.findViewById(R.id.x_win);
-        TextView oWin = v.findViewById(R.id.o_win);
-        TextView draw = v.findViewById(R.id.draw);
+        final TextView xWin = v.findViewById(R.id.x_win);
+        final TextView oWin = v.findViewById(R.id.o_win);
+        final TextView draw = v.findViewById(R.id.draw);
         ImageButton close = v.findViewById(R.id.close_button);
+        Button reset = v.findViewById(R.id.resetScores);
 
         xWin.setText(String.valueOf(ScoreStore.xWins));
         oWin.setText(String.valueOf(ScoreStore.oWins));
@@ -334,12 +403,16 @@ public class _1P_3by3 extends AppCompatActivity implements View.OnClickListener 
                 .create();
         dialog.show();
 
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
+        reset.setOnClickListener(view1 -> {
+            ScoreStore.xWins = 0;
+            ScoreStore.oWins = 0;
+            ScoreStore.draws = 0;
+            xWin.setText(String.valueOf(ScoreStore.xWins));
+            oWin.setText(String.valueOf(ScoreStore.oWins));
+            draw.setText(String.valueOf(ScoreStore.draws));
         });
+
+        close.setOnClickListener(view12 -> dialog.dismiss());
     }
 
     private void resetBoard() {
@@ -362,7 +435,7 @@ public class _1P_3by3 extends AppCompatActivity implements View.OnClickListener 
 
         initializeGameBoardStatus();
 
-        setGameStateInfo("Start Again!");
+        setGameStateInfo("Play Again!");
 
         Toast.makeText(this, "Board Reset", Toast.LENGTH_SHORT).show();
     }
@@ -380,4 +453,20 @@ public class _1P_3by3 extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        final ViewGroup nullParent = null;
+        View v = getLayoutInflater().inflate(R.layout.view_score_sheet, nullParent);
+        TextView xWin = v.findViewById(R.id.x_win);
+        TextView oWin = v.findViewById(R.id.o_win);
+        TextView draw = v.findViewById(R.id.draw);
+
+        ScoreStore.xWins = 0;
+        ScoreStore.oWins = 0;
+        ScoreStore.draws = 0;
+        xWin.setText(String.valueOf(ScoreStore.xWins));
+        oWin.setText(String.valueOf(ScoreStore.oWins));
+        draw.setText(String.valueOf(ScoreStore.draws));
+        super.onDestroy();
+    }
 }

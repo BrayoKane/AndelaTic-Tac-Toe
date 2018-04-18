@@ -139,7 +139,11 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:text=" "
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/space_1p3"
         android:textColor="#000000"
         android:textSize="28sp" />
 
@@ -152,6 +156,10 @@
         android:layout_alignTop="@+id/quitButton"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:background="@drawable/my_button_shape"
         android:text="@string/resetButton"
         android:textColor="#ffffff" />
@@ -164,6 +172,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:background="@drawable/my_button_shape"
         android:onClick="showScoreBoard"
         android:text="@string/scoreboard"
@@ -187,6 +199,10 @@
         android:layout_toRightOf="@id/ScoreBoardButton"
         android:background="@drawable/my_button_shape"
         android:text="@string/quit"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:textColor="#ffffff" />
 
 </RelativeLayout>
